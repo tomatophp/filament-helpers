@@ -1,0 +1,17 @@
+<?php
+
+namespace {{ namespace }};
+
+use Filament\Tables;
+use Filament\Actions;
+use TomatoPHP\FilamentHelpers\Contracts\ActionsBuilder;
+
+class {{ name }} implements ActionsBuilder
+{
+    public function actions(): array
+    {
+        return [
+            //
+        ];
+    }
+}

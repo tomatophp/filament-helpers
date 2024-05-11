@@ -1,0 +1,28 @@
+<?php
+
+namespace {{ namespace }};
+
+use Filament\Tables\Table;
+use Filament\Tables;
+use TomatoPHP\FilamentHelpers\Contracts\TableBuilder;
+
+class {{ name }} implements TableBuilder
+{
+    public function table(Table $table): Table
+    {
+        return $table->columns([
+             //
+         ])
+         ->filters([
+             //
+         ])
+         ->actions([
+             Tables\Actions\EditAction::make(),
+         ])
+         ->bulkActions([
+             Tables\Actions\BulkActionGroup::make([
+                 Tables\Actions\DeleteBulkAction::make(),
+             ]),
+         ]);
+    }
+}

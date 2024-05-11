@@ -1,0 +1,16 @@
+<?php
+
+namespace {{ namespace }};
+
+use Filament\Tables;
+use TomatoPHP\FilamentHelpers\Contracts\FiltersBuilder;
+
+class {{ name }} implements FiltersBuilder
+{
+    public function filters(): array
+    {
+        return [
+            //
+        ];
+    }
+}
