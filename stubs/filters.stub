@@ -3,9 +3,10 @@
 namespace {{ namespace }};
 
 use Filament\Tables;
+use Filament\Forms;
 use TomatoPHP\FilamentHelpers\Contracts\FiltersBuilder;
 
-class {{ name }} implements FiltersBuilder
+class {{ name }}Filters extends FiltersBuilder
 {
     public function filters(): array
     {

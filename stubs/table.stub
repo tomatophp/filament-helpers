@@ -4,9 +4,10 @@ namespace {{ namespace }};
 
 use Filament\Tables\Table;
 use Filament\Tables;
+use Filament\Forms;
 use TomatoPHP\FilamentHelpers\Contracts\TableBuilder;
 
-class {{ name }} implements TableBuilder
+class {{ name }}Table extends TableBuilder
 {
     public function table(Table $table): Table
     {

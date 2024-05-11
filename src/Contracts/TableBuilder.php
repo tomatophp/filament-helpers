@@ -8,10 +8,10 @@ use Filament\Tables\Table;
 
 abstract class TableBuilder
 {
-    public static function make(): Table
+    public static function make(Table $table): Table
     {
-        return (new static())->table();
+        return (new static())->table($table);
     }
 
-    public abstract function table(): Table;
+    public abstract function table(Table $table): Table;
 }

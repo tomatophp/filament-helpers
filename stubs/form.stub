@@ -6,7 +6,7 @@ use Filament\Forms\Form;
 use Filament\Forms;
 use TomatoPHP\FilamentHelpers\Contracts\FormBuilder;
 
-class {{ name }} implements FormBuilder
+class {{ name }}Form extends FormBuilder
 {
     public function form(Form $form): Form
     {

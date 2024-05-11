@@ -12,7 +12,7 @@ class Generator
     use Traits\GenerateForm;
     use Traits\GenerateTable;
 
-    private string $stubPath = __DIR__ . '/../stubs/';
+    private string $stubPath = __DIR__ . '/../../stubs/';
 
     public function __construct(
         public string $type,
@@ -20,6 +20,7 @@ class Generator
         public ?string $module=null,
         public ?string $path=null,
         public ?string $namespace=null,
+        public ?string $resource=null,
     )
     {
         if(config('filament-helpers.stub_path')){
@@ -39,6 +40,15 @@ class Generator
             'table' => $this->table(),
             'actions' => $this->actions(),
             'filters' => $this->filters(),
+            'all' => $this->all()
         };
+    }
+
+    public function all():void
+    {
+        $this->form();
+        $this->table();
+        $this->actions();
+        $this->filters();
     }
 }
