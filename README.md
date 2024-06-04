@@ -1,4 +1,4 @@
-![Screenshot](https://github.com/tomatophp/filament-helpers/blob/master/arts/3x1io-tomato-helpers.jpg)
+![Screenshot](https://raw.githubusercontent.com/tomatophp/filament-helpers/master/arts/3x1io-tomato-helpers.jpg)
 
 # Filament Helper Classes
 
