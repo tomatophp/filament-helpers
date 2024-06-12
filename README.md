@@ -71,7 +71,7 @@ you can join our discord server to get support [TomatoPHP](https://discord.gg/Xq
 
 ## Docs
 
-you can check docs of this package on [Docs](https://docs.tomatophp.com/plugins/laravel-package-generator)
+you can check docs of this package on [Docs](https://docs.tomatophp.com/filament/filament-helpers)
 
 ## Changelog
 
@@ -83,7 +83,7 @@ Please see [SECURITY](SECURITY.md) for more information about security.
 
 ## Credits
 
-- [Fady Mondy](mailto:info@3x1.io)
+- [Fady Mondy](https://wa.me/+201207860084)
 
 ## License
 
