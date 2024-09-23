@@ -8,6 +8,10 @@
 
 Helper Class Generator to manage your forms and table inside your filament app
 
+## Screenshots
+
+![Command](https://raw.githubusercontent.com/tomatophp/filament-helpers/master/arts/command.png)
+
 ## Installation
 
 ```bash
