@@ -15,7 +15,7 @@ Helper Class Generator to manage your forms and table inside your filament app
 ## Installation
 
 ```bash
-composer require tomatophp/filament-helpers --dev
+composer require tomatophp/filament-helpers
 ```
 
 ## Using
