@@ -44,7 +44,7 @@ public function form(Form $form): Form
 ```php
 use App\Filament\Resources\AccountResource\Tables\UserTable;
 
-public function form(Table $table): Table
+public function table(Table $table): Table
 {
     return UserTable::make($table);
 }
