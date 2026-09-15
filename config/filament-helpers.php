@@ -2,7 +2,8 @@
 
 return [
     /**
-     * The path to the stub files
+     * The folder of the stub files. Publish the default stubs with
+     * `php artisan vendor:publish --tag=filament-helpers-stubs` and point this to base_path('stubs/filament-helpers').
      */
-    "stub_path" => null
+    'stub_path' => null,
 ];

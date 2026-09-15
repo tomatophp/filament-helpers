@@ -2,9 +2,7 @@
 
 namespace {{ namespace }};
 
-use Filament\Tables;
 use Filament\Actions;
-use Filament\Forms;
 use TomatoPHP\FilamentHelpers\Contracts\ActionsBuilder;
 
 class {{ name }}Actions extends ActionsBuilder

@@ -2,8 +2,7 @@
 
 namespace {{ namespace }};
 
-use Filament\Tables;
-use Filament\Forms;
+use Filament\Tables\Filters;
 use TomatoPHP\FilamentHelpers\Contracts\FiltersBuilder;
 
 class {{ name }}Filters extends FiltersBuilder

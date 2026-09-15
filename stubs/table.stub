@@ -2,28 +2,31 @@
 
 namespace {{ namespace }};
 
-use Filament\Tables\Table;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\EditAction;
 use Filament\Tables;
-use Filament\Forms;
+use Filament\Tables\Table;
 use TomatoPHP\FilamentHelpers\Contracts\TableBuilder;
 
 class {{ name }}Table extends TableBuilder
 {
     public function table(Table $table): Table
     {
-        return $table->columns([
-             //
-         ])
-         ->filters([
-             //
-         ])
-         ->actions([
-             Tables\Actions\EditAction::make(),
-         ])
-         ->bulkActions([
-             Tables\Actions\BulkActionGroup::make([
-                 Tables\Actions\DeleteBulkAction::make(),
-             ]),
-         ]);
+        return $table
+            ->columns([
+                //
+            ])
+            ->filters([
+                //
+            ])
+            ->recordActions([
+                EditAction::make(),
+            ])
+            ->toolbarActions([
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
+                ]),
+            ]);
     }
 }

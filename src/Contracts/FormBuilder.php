@@ -2,14 +2,14 @@
 
 namespace TomatoPHP\FilamentHelpers\Contracts;
 
-use Filament\Forms\Form;
+use Filament\Schemas\Schema;
 
 abstract class FormBuilder
 {
-    public static function make(Form $form): Form
+    public static function make(Schema $schema): Schema
     {
-        return (new static())->form($form);
+        return app(static::class)->form($schema);
     }
 
-    public abstract function form(Form $form): Form;
+    abstract public function form(Schema $schema): Schema;
 }

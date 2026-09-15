@@ -6,8 +6,8 @@ abstract class ActionsBuilder
 {
     public static function make(): array
     {
-        return (new static())->actions();
+        return app(static::class)->actions();
     }
 
-    public abstract function actions(): array;
+    abstract public function actions(): array;
 }

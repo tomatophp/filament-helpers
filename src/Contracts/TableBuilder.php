@@ -2,16 +2,14 @@
 
 namespace TomatoPHP\FilamentHelpers\Contracts;
 
-
-
 use Filament\Tables\Table;
 
 abstract class TableBuilder
 {
     public static function make(Table $table): Table
     {
-        return (new static())->table($table);
+        return app(static::class)->table($table);
     }
 
-    public abstract function table(Table $table): Table;
+    abstract public function table(Table $table): Table;
 }

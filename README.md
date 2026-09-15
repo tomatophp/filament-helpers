@@ -6,11 +6,14 @@
 [![License](https://poser.pugx.org/tomatophp/filament-helpers/license.svg)](https://packagist.org/packages/tomatophp/filament-helpers)
 [![Downloads](https://poser.pugx.org/tomatophp/filament-helpers/d/total.svg)](https://packagist.org/packages/tomatophp/filament-helpers)
 
-Helper Class Generator to manage your forms and table inside your filament app
+Helper class generator to keep the forms, tables, actions and filters of your Filament app in their own classes.
 
-## Screenshots
+## Version Compatibility
 
-![Command](https://raw.githubusercontent.com/tomatophp/filament-helpers/master/arts/command.png)
+| Plugin | Filament | Laravel | PHP |
+|--------|----------|---------|-----|
+| 1.x    | 3.x      | 10.x / 11.x | 8.1+ |
+| 5.x    | 5.x      | 12.x / 13.x | 8.2+ |
 
 ## Installation
 
@@ -18,54 +21,73 @@ Helper Class Generator to manage your forms and table inside your filament app
 composer require tomatophp/filament-helpers
 ```
 
-## Using
+## Usage
 
-to generate a new helper class you can use this command
+Run the command and pick the type and name; you can generate the class in `app/`, inside a
+[laravel-modules](https://github.com/nWidart/laravel-modules) module, or in any source folder, optionally inside a resource folder.
 
 ```bash
 php artisan filament:helpers
 ```
 
-and select the type and name, and you can generate the class inside module or on selected path inside your resource.
+Or pass everything on the command line:
 
-## Using Generated Class
+```bash
+# form, table, actions, filters or all
+php artisan filament:helpers User all
+php artisan filament:helpers User form --resource=Users
+php artisan filament:helpers User table Blog                       # inside the Blog module
+php artisan filament:helpers User all "" packages/accounts/src --namespace="TomatoPHP\FilamentAccounts"
+```
 
-and you can use the generated class like this
+Existing classes are kept unless you confirm or pass `--force`.
+
+## Using Generated Classes
 
 ```php
-use App\Filament\Resources\AccountResource\Forms\UserForm;
+use App\Filament\Resources\Users\Forms\UserForm;
+use Filament\Schemas\Schema;
 
-public function form(Form $form): Form
+public static function form(Schema $schema): Schema
 {
-    return UserForm::make($form);
+    return UserForm::make($schema);
 }
 ```
 
 ```php
-use App\Filament\Resources\AccountResource\Tables\UserTable;
+use App\Filament\Resources\Users\Tables\UserTable;
+use Filament\Tables\Table;
 
-public function form(Table $table): Table
+public static function table(Table $table): Table
 {
     return UserTable::make($table);
 }
 ```
 
 ```php
-use App\Filament\Resources\AccountResource\Actions\UserActions;
+use App\Filament\Resources\Users\Actions\UserActions;
+use App\Filament\Resources\Users\Filters\UserFilters;
 
-public function table(Table $table): Table
+public static function table(Table $table): Table
 {
-    return $table->actions(UserActions::make());
+    return $table
+        ->recordActions(UserActions::make())
+        ->filters(UserFilters::make());
 }
 ```
 
-```php
-use App\Filament\Resources\AccountResource\Actions\UserFilters;
+## Custom Stubs
 
-public function table(Table $table): Table
-{
-    return $table->filters(UserFilters::make());
-}
+```bash
+php artisan vendor:publish --tag="filament-helpers-stubs"
+```
+
+Then set `stub_path` in `config/filament-helpers.php` (publish it with `--tag="filament-helpers-config"`) to `base_path('stubs/filament-helpers')`.
+
+## Testing
+
+```bash
+composer test
 ```
 
 ## Other Filament Packages
