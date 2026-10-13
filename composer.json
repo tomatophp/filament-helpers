@@ -2,6 +2,12 @@
     "name": "tomatophp/filament-helpers",
     "type": "library",
     "description": "Helper Class Generator to manage your forms and table inside your filament app",
+    "homepage": "https://tomatophp.com/en/plugins/filament-helpers",
+    "support": {
+        "issues": "https://github.com/tomatophp/filament-helpers/issues",
+        "source": "https://github.com/tomatophp/filament-helpers",
+        "docs": "https://tomatophp.com/en/plugins/filament-helpers"
+    },
     "keywords": [
         "php",
         "laravel",
@@ -47,6 +53,12 @@
         "pestphp/pest": "^4.0|^5.0",
         "pestphp/pest-plugin-laravel": "^4.0|^5.0",
         "pestphp/pest-plugin-livewire": "^4.0|^5.0"
+    },
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
     },
     "config": {
         "sort-packages": true,
