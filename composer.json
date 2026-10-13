@@ -2,6 +2,12 @@
     "name": "tomatophp/filament-helpers",
     "type": "library",
     "description": "Helper Class Generator to manage your forms and table inside your filament app",
+    "homepage": "https://tomatophp.com/en/plugins/filament-helpers",
+    "support": {
+        "issues": "https://github.com/tomatophp/filament-helpers/issues",
+        "source": "https://github.com/tomatophp/filament-helpers",
+        "docs": "https://tomatophp.com/en/plugins/filament-helpers"
+    },
     "keywords": [
         "php",
         "laravel",
